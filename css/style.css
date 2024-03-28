@@ -1,0 +1,443 @@
+:root {
+    --benovse: #6f0bbb;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#desktop-nav, .sifaris, .slide-p, .hesab-sec {
+    display: none;
+}
+.container{
+    width: 95%;
+    margin: auto;
+}
+header {
+    /* width: 100%; */
+}
+nav{
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+#mobile-nav {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    
+}
+
+.fa-bars {
+    font-size: 1.75em;
+}
+
+.fa-magnifying-glass {
+    font-size: 1em;
+
+}
+
+#logo {
+    max-width: 70px;
+    display: inline-block;
+    width: 100%;
+    margin-left: 50px;
+}
+
+#logo img {
+    width: 100%;
+    margin: auto;
+}
+
+#mobile-nav-end,
+#languages {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#languages li {
+    border: 1px solid var(--benovse);
+    padding: 7px;
+    border-radius: 7px;
+}
+
+#languages li a {
+    color: var(--benovse);
+    font-size: 1.2em;
+}
+.sifaris{
+    background-color: var(--benovse);
+    border: 0;
+    color: #fff;
+    padding: 12px 10px;
+    border-radius: 10px;
+    min-width: 175px;
+    font-size: 1.15rem;
+    margin-top: 20px;
+}
+#slide1 {
+    background: url('../img/slider1.png') center/cover no-repeat;
+}
+
+#slide2 {
+    background: url('../img/slider2.png') center/cover no-repeat;
+}
+
+#slide3 {
+    background: url('../img/slider3.png') center/cover no-repeat;
+}
+
+#slide4 {
+    background: url('../img/slider4.png') center/cover no-repeat;
+}
+
+.swiper-slide {
+    margin-top: 25% ;
+    height: 40vh !important;
+    border-radius: 20px;
+}
+
+.slide-texts h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.slide-texts h2 span {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.slide-texts {
+    margin: 30px;
+}
+
+.slide-texts span {
+    font-size: 1.3em;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 52% !important;
+    height: 30px;
+    padding: 10px;
+}
+
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0 10px !important;
+    transition: ease-in-out 1s;
+
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--benovse) !important;
+    border-radius: 2px !important;
+    width: 30px !important;
+
+}
+.card{
+    background: linear-gradient(180deg,#f0f5fb 0%,#f8f0fe 100%);
+    border: 1px solid rgba(0,0,0,0);
+    border-radius: 15px;
+    width: 45%;
+    /* max-height: 20vh; */
+    padding: 20px;
+}
+
+.cards-4{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+    margin: 10vh auto;
+}
+.card h3{
+    font-size: 1em;
+    color: #000;
+    margin-top: 20px;
+}
+.card p{
+    font-size: .75em;
+    margin: 5px 0;
+    color: #6f6e6e;
+    font-weight: 300;
+}
+.hesab2-sec{
+    text-align: center;
+}
+.hesab2-sec button{
+    border: 0;
+    padding: 14px 17px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    color: #8f8f8f;
+    margin: 0 5px;
+
+}
+.hesab2-sec button:active{
+    background-color: var(--benovse);
+    color: #fff;
+}
+.hesab-values{
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;  
+}
+.value{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(111, 11, 187, .3607843137);
+    padding: 12px 10px 11px;
+    /* margin: 20px 0; */
+}
+.value-texts p{
+    font-size: 0.7em;
+    color: #818181;
+    padding-bottom: 5px;
+}
+.value-texts h5{
+    font-size: 1.2em;
+
+}
+.value button{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid #bbb;
+    background: #fff;
+    color: #bbb;
+    font-size: 1.1em;
+}
+.min-max-texts{
+    display: flex;
+    color: #818181;
+    font-size: .8em;
+    margin-bottom: 15px;
+    padding: 5px;
+    justify-content: space-between;
+}
+.faizler{
+    margin: 20px 0;
+    padding: 10px;
+}
+.faiz{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.faiz span{
+    color: var(--benovse);
+    font-weight: bold;
+}
+.sifaris-mobile{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin: auto;
+}
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 75%;
+        margin: auto;
+    }
+    nav {
+        position: absolute;
+        background-color: transparent;
+
+    }
+    .sifaris, .slide-p, .hesab-sec{
+        display: initial;
+    }
+    
+    #mobile-nav, .hesab2-sec {
+        display: none;
+    }
+    #desktop-nav{
+        height: 13vh;
+        align-items: center;
+    }
+    #desktop-nav,
+    #desktop-nav-left {
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    #desktop-nav,
+    #desktop-nav-left,
+    #desktop-nav ul,
+    #desktop-nav-right {
+        display: flex;
+        align-items: center;
+    }
+
+    #desktop-nav ul {
+        gap: 10px;
+    }
+    #desktop-nav-right{gap: 15px;}
+    #desktop-nav ul{margin: 10px 0;}
+    #desktop-nav ul li a{
+        font-size: 0.875em;
+        line-height: 1.2142;
+        text-transform: uppercase;
+        transition: .3s;
+        color: #000;
+    }
+    #desktop-nav ul li a:hover{
+        color: var(--benovse);
+    }
+    #ferdi{
+        color: var(--benovse) !important;
+        font-weight: 600;
+    }
+    #atb360-btn{
+        background: linear-gradient(87.61deg,#6f0bbb -5.3%,#be9bd8 158.9%);
+        color: #fff;
+        font-weight: 600;
+        padding: 10px;
+        border-radius: 7px;
+        font-size: .95em;
+    }
+    #lang{
+        color: var(--benovse);
+        padding: 10px;
+        border: 1px solid var(--benovse);
+        border-radius: 7px;
+    }
+    #bank-haqqinda{
+        font-size: .9em;
+        color: #000;
+        text-transform: uppercase;
+    }
+    #phone{
+        width: 70px;
+        height: 25px;
+        margin-right: -20px;
+    }
+    #phone-num{
+        font-size: 1.1em;
+        font-weight: bold;
+
+    }
+    .phone-sec{
+        transition: .3s;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .phone-sec:hover{
+        color: var(--benovse);
+    }
+    #slide1 {
+        background: url('../img/desslider1.png') center/cover no-repeat;
+    }
+
+    #slide2 {
+        background: url('../img/desslider2.png') center/cover no-repeat;
+    }
+
+    #slide3 {
+        background: url('../img/desslider3.png') center/cover no-repeat;
+    }
+
+    #slide4 {
+        background: url('../img/desslider4.png') center/cover no-repeat;
+    }
+
+    .swiper-slide {
+        /* width: 100vw; */
+        border-radius: 0;
+        height: 60vh !important;
+        margin: initial;
+    }
+
+    .slide-texts{
+        margin: 10% 13%;
+    }
+    .slide-texts h2, .slide-texts span{
+        font-size: 2.7em;
+    }
+    .slide-p{
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+ 
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal{
+        top: 60% !important;
+    }
+    .cards-2{display: flex;}
+    .cards-4{
+        gap: 20px;
+    }
+    .card{
+        width: 23%;
+        min-height: 40vh;
+        transition: .3s;
+    }
+    .card h3{
+        font-size: 1.5em;
+    }
+    .card p{
+        font-size: 1.2em;
+        margin: 30px 0;
+    }
+    .card svg{
+        margin: 30px 0;
+    }
+    .card:hover{
+        transform: translateY(-10%);
+        box-shadow: 0 0 15px #edecec;
+        border: 1px solid #fff;
+    }
+    .hesab-sec{
+        display: flex;
+        justify-content: center;
+    }
+    .hesab{
+        transition: .5s;
+        display: flex;
+        gap: 10px;
+    }
+}
+
+
+/* FOR TABLETS */
+/* @media only screen and (min-width: 600px){
+    #mobile-nav{
+        background-color: #fff;
+    }
+    .container{
+        width: 100%;
+    }
+    #desktop-nav{
+        display: none;
+    }
+    #mobile-nav{
+        display: flex;
+    }
+    .swiper-slide{
+        border-radius: 20px;
+        margin-top: 10%;
+    }
+    .card{
+        width: 45%;
+        min-height: 30vh;
+    }
+    .card h3{
+        font-size: 1.5em;
+    }
+    .card p{
+        font-size: 1em;
+        margin: 20px 0;
+    }
+} */
