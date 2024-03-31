@@ -182,7 +182,7 @@ nav {
 #mobile-nav {
     align-items: center;
     justify-content: space-around;
-    padding: 10px 0;
+    /* padding: 10px 0; */
 }
 
 .fa-bars {
@@ -249,7 +249,7 @@ nav {
 }
 
 .swiper-slide {
-    margin-top: 20%;
+    margin-top: 22%;
     height: 40vh !important;
     border-radius: 20px;
 }
@@ -274,7 +274,7 @@ nav {
 
 .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-    top: 50% !important;
+    top: 53% !important;
     height: 30px;
     padding: 10px;
 }
