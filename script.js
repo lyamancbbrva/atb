@@ -11,13 +11,13 @@ function hideNav(y) {
       (burgerMenu.style.display = "none"),
       (footer.style.display = "none"),
       (faX.style.display = "block"),
-      (hiddenNav.style.display = "block"),
+      (hiddenNav.style.transform = "translateX(0)"),
       (y = 0))
     : ((main.style.display = "block"),
       (burgerMenu.style.display = "block"),
       (footer.style.display = "block"),
       (faX.style.display = "none"),
-      (hiddenNav.style.display = "none"));
+      (hiddenNav.style.transform = "translateX(-100%)"));
 }
 
 
@@ -61,21 +61,12 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-const check = document.querySelector(".fa-check");
 const faizSec = document.querySelector(".faiz-sec");
 const nagdBtn = document.querySelector(".active-nagd");
 const emanetBtn = document.querySelector(".emanet-btn");
 const hesab1 = document.querySelector("#hesab1");
 const hesab2 = document.querySelector("#hesab2");
 
-flag = 1;
-
-// check buttonu
-function checkNone() {
-  flag === 1
-    ? ((check.style.display = "none"), (flag = 0))
-    : ((check.style.display = "block"), (flag = 1));
-}
 
 let qiymet = 5000;
 let ay = 12;
@@ -86,7 +77,6 @@ let ayliqOdenis = 442;
 function rangee() {
   const rangeMonth = document.querySelector("#range-aylar").value;
   const rangePrice = document.querySelector("#range-qiymet").value;
-  faizSec.querySelector("#ayliqodenis-p").textContent = `${Math.trunc(ayliqOdenis)} ₼`
   qiymet = rangePrice
   ay = rangeMonth
   qiymetDeyis()
@@ -101,10 +91,10 @@ function qiymetDeyis(x) {
   else if(x === 3 && ay <= 47) ay+=1
   else if(x === 2 && ay >= 4) ay-=1
 
-  let salam = ((qiymet * 11) / 100) + +qiymet;
-  ayliqOdenis = salam / ay;
+  ayliqOdenis = (((qiymet*11)/100)+ +qiymet)/ay;
   faizSec.querySelector("#ayliqodenis span").textContent = `${Math.trunc(ayliqOdenis)} ₼`;
   faizSec.querySelector(".value1 h5").textContent = `${qiymet} AZN`;
+  faizSec.querySelector("#ayliqodenis-p").textContent = `${Math.trunc(ayliqOdenis)} ₼`
   faizSec.querySelector(".value1:nth-child(3) h5").textContent = ` ${ay} ay`;
  
  

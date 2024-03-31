@@ -1,17 +1,16 @@
 :root {
     --benovse: #6f0bbb;
 }
-body{
-    overflow-x: hidden;
-}
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 #hidden-nav{
-    /* transform: translateX(-100%); */
+    transform: translateX(-100%);
+    position: absolute;
     transition: .5s;
-    display: none;
-    height: 150vh;
+    margin: 10vh 0;
+    background-color: #fff;
+    z-index:10000;
 }
 #burger-menu{
     width: 40px;
@@ -98,6 +97,38 @@ body{
     margin: 0 5px;
 
 }
+
+.fixed-icon img{
+    width: 40px;
+    height: 40px;
+}
+.bg-icon{
+    bottom: 30px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: var(--benovse);
+   z-index: 10000;
+   padding: 15px;
+    
+}
+.bg-img{
+    background: url('../img/ic.png') center/cover;
+    width: 30px;
+    height: 30px;
+}
+.bg-blue{
+    left: 20px;
+    bottom: 10px;
+   z-index: 10000;
+    border-radius: 50%;
+    padding:  3px 5px;
+    background: #0048ff;
+    position: fixed;
+}
 .icons img{
     width: 40px;
     height: 40px;
@@ -165,24 +196,19 @@ body{
     display: block;
     margin: auto;
 }
-
 .container {
     width: 95%;
     margin: auto;
 }
-
-nav {
-    position: fixed;
+#mobile-nav {
     background-color: #fff;
+    align-items: center;
     width: 100%;
     position: fixed;
     z-index: 1000;
-}
-
-#mobile-nav {
-    align-items: center;
+    top: 0;
+    padding: 10px 0;
     justify-content: space-around;
-    /* padding: 10px 0; */
 }
 
 .fa-bars {
