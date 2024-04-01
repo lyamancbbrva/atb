@@ -4,6 +4,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
+body{overflow-x: hidden;}
 #hidden-nav{
     transform: translateX(-100%);
     position: absolute;
@@ -191,7 +192,6 @@
 .hidden-btns {
     border-radius: 10px;
 }
-
 .gelir-sifaris {
     display: block;
     margin: auto;
@@ -437,6 +437,7 @@
     margin: 5px auto;
 }
 
+
 #selects select p {
     display: block;
     width: 10px;
@@ -548,7 +549,8 @@
     background-color: #fff;
 }
 #val2{
-    padding: 15px 1px;
+    /* padding: 15px 1px; */
+    height: 52px;
 }
 #calc select {
     appearance: none;
@@ -1090,6 +1092,7 @@
     }
 
     #gelir-flex {
+        margin: 0 15px;
         gap: 10px;
     }
 

@@ -68,6 +68,7 @@ let ay = 12;
 let ayliqOdenis = 442;
 let faiz = 11;
 let il = 0;
+// let faiz2 = 0
 
 // qiymet deyisen desktop
 function rangee() {
@@ -86,14 +87,12 @@ function qiymetDeyis(x) {
   else if (x === 3 && ay <= 47) ay += 1;
   else if (x === 2 && ay >= 4) ay -= 1;
 
-  if (ay == 13) {
-    faiz += 2;
-  } else if (ay == 24 || ay == 36 || ay == 48) {
-    faiz++;
-  }
+  if (ay == 13)  faiz += 2;
+  else if (ay == 24) faiz = 14;
+  else if (ay == 36) faiz = 15;
+  else if (ay == 48) faiz = 16;
+  else if(ay < 13) faiz = 11;
 
-  
- 
 
   ayliqOdenis = ((qiymet * faiz) / 100 + +qiymet) / ay;
   faizSec.querySelector("#ayliqodenis span").textContent = `${Math.trunc(ayliqOdenis)} ₼`;
@@ -203,27 +202,27 @@ function changeHesab(x) {
                   <div id="gelir-sec">
                   <div id="gelir-flex">
                   <div id="selects">
-                    <select id="valyuta">
+                    <select id="valyuta" oninput="selectCalc()">
                       <option>valyuta</option>
-                      <option value="azn">AZN</option>
-                      <option value="usd">USD</option>
+                      <option value="AZN">AZN</option>
+                      <option value="USD">USD</option>
                     </select>
-                    <select id="muddet">
+                    <select id="muddet" oninput="selectCalc()">
                       <option value="muddet">müddət</option>
                       <option value="12">12</option>
                       <option value="24">24</option>
                       <option value="36">36</option>
                     </select>
-                    <select id="odenis">
+                    <select id="odenis" oninput="selectCalc()">
                       <option>faizlərin ödənilməsi</option>
                       <option value="muddetin sonunda">müddətin sonunda</option>
                       <option  value="ayliq odenis">aylıq ödəniş</option>
                     </select>
-                    <input type="text"  id="mebleg" placeholder="məbləğ (minş 1000 AZN /USD)*"/>
+                    <input type="text"  id="mebleg" placeholder="məbləğ (min. 1000 AZN /USD)*"  oninput="selectCalc()"/>
                   </div>
                   <div id="ayliq-faiz">
                     <p>faizlər - aylıq</p>
-                    <p>0% - 0 AZN</p>
+                    <p id="faiz2">${faiz2}% - ${ayliqEmanet} AZN</p>
                   </div>
                   </div>
                   <div class="gelir-btn">
@@ -293,3 +292,43 @@ function calc() {
     
   
 }
+
+
+
+
+// o birisi select ifnen olan
+
+
+let faiz2 = 0
+let ayliqEmanet = 0
+let  valyutaAd = 'AZN'
+function selectCalc() {
+  const muddet = document.querySelector("#muddet").value
+  const valyuta = document.querySelector("#valyuta").value
+  const odenis = document.querySelector("#odenis").value
+  const mebleg = document.querySelector("#mebleg").value
+  
+  if (valyuta === 'AZN') {
+    valyutaAd = 'AZN'
+    if (muddet === '12') {
+      if (odenis === "muddetin sonunda") faiz2 = 5.5
+          else faiz2 = 5;
+        } 
+        if (muddet === '24') {
+          if (odenis === "muddetin sonunda") faiz2 = 6.5
+          else faiz2 = 6;
+          
+          if (muddet === '36') {
+            if (odenis === "muddetin sonunda") faiz2 = 9
+            else faiz2 = 8;
+          } 
+        } 
+      }
+      else faiz2 = 0.1; valyutaAd = 'USD'
+   
+      ayliqEmanet = (mebleg*faiz2)/100
+      faizSec.querySelector("#faiz2").textContent = `${faiz2}% - ${ayliqEmanet} ${valyutaAd}`
+    }
+
+
+
