@@ -548,7 +548,6 @@
     background-color: #fff;
 }
 #val2{
-    /* width: 30%; */
     padding: 15px 1px;
 }
 #calc select {
@@ -739,12 +738,6 @@
         margin: 0;
         width: 47%;
     }
-
-    nav {
-        position: absolute;
-        background-color: transparent;
-    }
-
     .mobile-none {
         display: block;
     }
@@ -762,11 +755,15 @@
     .desktop-none, #hidden-nav {
         display: none;
     }
-
+    nav{
+        background-color: transparent !important;
+        position: absolute;
+        z-index: 999999999;
+        width: 100%;
+    }
     #desktop-nav {
         height: 13vh;
-    }
-
+    }  
     #desktop-nav,
     #desktop-nav-left,
     #valyuta,
@@ -886,7 +883,7 @@
     .swiper-slide {
         border-radius: 0;
         height: 60vh !important;
-        margin: initial;
+        margin: 0;
     }
 
     .slide-texts {
@@ -1150,40 +1147,9 @@
     #desktop-lists li a {
         font-size: .8em;
     }
-
     #desktop-lists ul {
         border-right: 1px solid #ccc;
     }
 }
 
 
-/* FOR TABLETS */
-/* @media only screen and (min-width: 600px){
-    #mobile-nav{
-        background-color: #fff;
-    }
-    .container{
-        width: 100%;
-    }
-    #desktop-nav{
-        display: none;
-    }
-    #mobile-nav{
-        display: flex;
-    }
-    .swiper-slide{
-        border-radius: 20px;
-        margin-top: 10%;
-    }
-    .card{
-        width: 45%;
-        min-height: 30vh;
-    }
-    .card h3{
-        font-size: 1.5em;
-    }
-    .card p{
-        font-size: 1em;
-        margin: 20px 0;
-    }
-} */

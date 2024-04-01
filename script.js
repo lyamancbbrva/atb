@@ -20,10 +20,6 @@ function hideNav(y) {
       (hiddenNav.style.transform = "translateX(-100%)"));
 }
 
-
-
-
-
 // slider
 
 var swiper = new Swiper(".mySwiper", {
@@ -67,37 +63,45 @@ const emanetBtn = document.querySelector(".emanet-btn");
 const hesab1 = document.querySelector("#hesab1");
 const hesab2 = document.querySelector("#hesab2");
 
-
 let qiymet = 5000;
 let ay = 12;
 let ayliqOdenis = 442;
-
+let faiz = 11;
+let il = 0;
 
 // qiymet deyisen desktop
 function rangee() {
   const rangeMonth = document.querySelector("#range-aylar").value;
   const rangePrice = document.querySelector("#range-qiymet").value;
-  qiymet = rangePrice
-  ay = rangeMonth
-  qiymetDeyis()
+  qiymet = rangePrice;
+  ay = rangeMonth;
+  qiymetDeyis();
 }
-
 
 // qiymeti deyisen
 
 function qiymetDeyis(x) {
-  if(x === 1 && qiymet <= 39900) qiymet+=100
-  else if(x === 0 && qiymet >= 400) qiymet-=100
-  else if(x === 3 && ay <= 47) ay+=1
-  else if(x === 2 && ay >= 4) ay-=1
+  if (x === 1 && qiymet <= 39900) qiymet += 100;
+  else if (x === 0 && qiymet >= 400) qiymet -= 100;
+  else if (x === 3 && ay <= 47) ay += 1;
+  else if (x === 2 && ay >= 4) ay -= 1;
 
-  ayliqOdenis = (((qiymet*11)/100)+ +qiymet)/ay;
+  if (ay == 13) {
+    faiz += 2;
+  } else if (ay == 24 || ay == 36 || ay == 48) {
+    faiz++;
+  }
+
+  
+ 
+
+  ayliqOdenis = ((qiymet * faiz) / 100 + +qiymet) / ay;
   faizSec.querySelector("#ayliqodenis span").textContent = `${Math.trunc(ayliqOdenis)} ₼`;
   faizSec.querySelector(".value1 h5").textContent = `${qiymet} AZN`;
-  faizSec.querySelector("#ayliqodenis-p").textContent = `${Math.trunc(ayliqOdenis)} ₼`
-  faizSec.querySelector(".value1:nth-child(3) h5").textContent = ` ${ay} ay`;
- 
- 
+  faizSec.querySelector("#ayliqodenis-p").textContent = `${Math.trunc( ayliqOdenis )} ₼`;
+  faizSec.querySelector(".value1:nth-child(3) h5").textContent = `${ay} ay`;
+  faizSec.querySelector(".faiz").textContent = `${faiz}%`;
+  faizSec.querySelector(".faiz-2").textContent = `${faiz}%`;
 }
 
 // deyisen sectionlar
@@ -159,7 +163,7 @@ function changeHesab(x) {
                   <div class="faiz-derecesi-texts">
                     <div>
                       <h6>faiz dərəcəsi</h6>
-                      <p>11%</p>
+                      <p class="faiz">${faiz}%</p>
                     </div>
                     <div>
                       <h6>aylıq ödəniş</h6>
@@ -171,7 +175,7 @@ function changeHesab(x) {
                 <div class="faizler">
           <div class="faiz">
             <p>faiz dərəcəsi</p>
-            <span>11%</span>
+            <span class="faiz-2">${faiz}%</span>
           </div>
           <hr>
           <div class="faiz" id="ayliqodenis">
@@ -231,19 +235,61 @@ function changeHesab(x) {
 }
 changeHesab(1);
 
+const val1 = document.querySelector("#val1")
+let val2 = document.querySelector("#val2");
+const sel1 = document.querySelector("#sel1")
+const sel2 = document.querySelector("#sel2");
 
-const val1 = document.querySelector("#val1").value
-let val2 = document.querySelector("#val2")
-const sel1 = document.querySelector("#sel1").value
-const sel2 = document.querySelector("#sel2").value
+function calc() {
 
+  let kod = '';
+    if (sel1.value == 'EUR') {
+      if (sel2.value == 'GBP') {
+        kod = (val1.value * 0.8346).toFixed(2);
+        console.log(kod);
 
-function calc(){
-  val2.innerHTML = 5
+      } else if (sel2.value == 'EUR') {
+        kod = val1.value;
+        console.log(kod);
+      }
+      else{
+        kod = (val1.value * 1.8120).toFixed(2);
+        console.log(kod);
+      }
+    } 
+    
+    
+    else if (sel1.value == 'AZN') {
+      if (sel2.value == 'EUR') {
+        kod = (val1.value * 0.5402).toFixed(2);
+        console.log(kod);
 
-  if(sel1 === "AZN" && sel2 === "EUR"){
+      } else if (sel2.value == 'AZN') {
+        kod = val1.value ;
+        console.log(kod);
+      }
+        else{
+          kod = (val1.value * 0.4606).toFixed(2);
+          console.log(kod);
+        }
+      }
+       
+    else if(sel1.value == 'GBP'){
+        if (sel2.value == 'AZN') {
+          kod = (val1.value * 2.1110).toFixed(2);
+          console.log(kod);
+        }
+        else if(sel2.value == 'EUR'){
+          kod = (val1.value * 1.1405).toFixed(2);
+          console.log(kod);
+        }
+        else{
+          kod = val1.value ;
+          console.log(kod);
+        }
 
-  }
+      }
+  val2.innerHTML = kod
+    
   
-
 }
