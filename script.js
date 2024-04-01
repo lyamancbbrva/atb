@@ -293,11 +293,7 @@ function calc() {
   
 }
 
-
-
-
 // o birisi select ifnen olan
-
 
 let faiz2 = 0
 let ayliqEmanet = 0
@@ -324,7 +320,7 @@ function selectCalc() {
           } 
         } 
       }
-      else faiz2 = 0.1; valyutaAd = 'USD'
+      else {faiz2 = 0.1; valyutaAd = 'USD'}
    
       ayliqEmanet = (mebleg*faiz2)/100
       faizSec.querySelector("#faiz2").textContent = `${faiz2}% - ${ayliqEmanet} ${valyutaAd}`
